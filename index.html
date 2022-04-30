@@ -56,6 +56,47 @@
                             <use href="./images/icon.svg#icon-close"></use>
                         </svg>
                     </button>
+                    <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+                    <form class="form">
+                        <div class="form-field">
+                            <label class="label-field" for="name">Имя</label>
+                            <input class="input-field" type="text" name="name" id="name"/>
+                            <span class="button-modal">
+                                <svg class="button-icon-modal person" width="12" height="12">
+                                    <use href="./images/icon.svg#icon-modal-person"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="form-field">
+                            <label class="label-field" for="tel">Телефон</label>
+                            <input class="input-field" type="tel" name="tel" id="tel"/>
+                            <span class="button-modal">
+                                <svg class="button-icon-modal phone" width="13" height="13">
+                                    <use href="./images/icon.svg#icon-modal-phone"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="form-field">
+                        <label class="label-field" for="mail">Почта</label>
+                        <input class="input-field" type="email" name="mail" id="mail"/>
+                        <span class="button-modal">
+                            <svg class="button-icon-modal email" width="15" height="12">
+                                <use href="./images/icon.svg#icon-modal-email"></use>
+                            </svg>
+                        </span>
+                        </div>
+                        <div class="form-field comment">
+                            <label class="label-field" for="comment">Комментарий</label>
+                            <textarea class="textarea-field" placeholder="Введите текст" id="comment"></textarea>
+                        </div>
+                        <div class="form-field-policy">
+                            <input type="checkbox" name="policy" id="policy">
+                            <label class="label-field-policy" for="policy">
+                                Соглашаюсь с рассылкой и принимаю 
+                                <a href="" class="link-policy">Условия договора</a></label>
+                        </div>
+                        <button class="button-primary send" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         <!-- Work / Наши преймущества (с условным заголовком) -->
@@ -347,7 +388,7 @@
                 </address>
                 </div>
                 <div class="footer-social">
-                    <h3 class="social-title">Присоединяйтесь</h3>
+                    <h3 class="footer-title">Присоединяйтесь</h3>
                     <ul class="social list">
                         <li class="social-item">
                             <button class="button-social">
@@ -379,9 +420,24 @@
                         </li>
                     </ul>
                 </div>
+                <div class="footer-mailing">
+                    <h3 class="footer-title">Подпишитесь на рассылку</h3>
+                    <form class="form-mailing">
+                        <div class="form-field-button">
+                            <div class="form-field-mailing">
+                                <label for="mail"></label>
+                                <input class="input-mailing" placeholder="E-mail" type="email" name="mail" id="mail" />
+                            </div>
+                            <button class="button-primary subscribe" type="submit">Подписаться
+                                <svg class="subscribe-icon" width="24" height="24">
+                                    <use href="./images/icon.svg#icon-send"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </footer>
-
     <script src="./js/modal.js"></script>
     </body>
 </html>

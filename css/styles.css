@@ -7,7 +7,7 @@
     --secondary-background-color: #2F303A;
     --primary-icon-color: #AFB1B8;
 }
-body { background: #ffffff;
+body { background-color: #ffffff;
     color: var(--primary-text-color);
     font-family: Roboto, sans-serif;
     letter-spacing: 0.03em;
@@ -144,7 +144,6 @@ margin-rigth:40px;
 .contact-icon {
     margin-right: 10px;
     fill: currentColor; 
-    vertical-align:middle;
 }
 /* Hero / Эффективные решения */
 .section.hero { 
@@ -189,11 +188,199 @@ margin-rigth:40px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border-color: transparent;
-    padding: 10px 32px;
+    padding: 10px;
+    height: 50px;
     min-width: 200px;
     margin-top: 30px;
     cursor: pointer;
 }
+
+/* Модальное окно */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -80%) scale(0.39);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    min-width: 528px;
+    min-height: 581px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000000;
+    background: #ffffff;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button-icon-close {
+    fill: currentColor;
+    width: 11px;
+    height: 11px;
+}
+.button-close:hover, .button-close:focus {
+    color: var(--accent-color);
+}
+/* Cтили для модального окна */
+.form {
+    margin: 12px 40px 40px 40px;
+}
+.modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    margin-top: 40px;
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--primary-text-color);
+}
+.form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.form-field-policy {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-left: 12px;
+}
+
+.form-field.comment {
+    margin-bottom: 20px;
+}
+.label-field {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--secondary-text-color);
+    margin-bottom: 4px;
+}
+.label-field-policy { 
+    margin-left: 7px;
+    font-size: 14px;
+    line-height: 1.71;
+}
+.input-field {
+    padding: 11px 12px 11px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+
+.input-field:focus {
+    border: 1px solid var(--accent-color);
+} 
+.input-field:focus+.button-modal {
+    color: var(--accent-color);
+}
+.input-field:hover {
+    cursor: pointer;
+}
+input[type="checkbox"] {
+    width: 16px;
+    height: 15px;
+}
+.textarea-field {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 11px 12px;
+    height: 120px;
+    width: 100%;
+    resize: none; 
+}
+.textarea-field:focus {
+    border: 1px solid var(--accent-color);
+}
+.textarea-field::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1,17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+/* для конспекта стили при исчезновении placeholder
+.textarea-field:not(:placeholder-shown) {
+    border-color: #2196f3;
+} */
+.button-primary.send {
+    margin: 0 164px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-primary.send:hover,
+.button-primary.send:focus {
+    background-color: #188CE8;
+    cursor: pointer;
+}
+
+.link-policy {
+    color: var(--accent-color);
+}
+/* Иконки для модального окна */
+.button-modal {
+    position: absolute;
+    display: flex;
+    left: 12px;
+    bottom: 11px;
+    width: 18px;
+    height: 18px;
+    transition: background-color 4250ms cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.button-icon-modal{
+    fill: currentColor;
+}
+.button-icon-modal.person {
+    width: 12px;
+    height: 12px;
+}
+.button-icon-modal.phone {
+    width: 13px;
+    height: 13px;
+}
+.button-icon-modal.email {
+    width: 15px;
+    height: 12px;
+}
+
+
 /* Hidden */
 .visually-hidden {
     position: absolute;
@@ -350,13 +537,12 @@ margin-rigth:40px;
     padding: 0;
     border: none;
     color: var(--primary-icon-color);
-    background: #ffffff;
+    background-color: #ffffff;
     width: 44px;
     height: 44px;
     align-items: center;
     justify-content: center;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-team-icon-social {
     fill: currentColor;
@@ -440,10 +626,7 @@ address {
 .footer-contacts:focus {
     color: var(--accent-color);
 }
-.footer-main {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
+
 .footer {
     display: flex;
     flex-direction: row;
@@ -454,7 +637,7 @@ address {
     margin-right: 70px;
 }
 
-.social-title {
+.footer-title {
     margin: 0;
     font-weight: 700;
     font-size: 14px;
@@ -494,6 +677,45 @@ address {
 }
 .button-social:hover {
     background-color: var(--accent-color)
+}
+.footer-mailing {
+    margin-left: auto;
+}
+.form-mailing {
+    margin-top: 20px;
+}
+.form-field-button {
+    display: flex;
+    align-items: center;
+}
+.input-mailing {
+    width: 358px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: rgba(33, 150, 243, 0);
+    color: #ffffff;
+    padding: 15px 16px;
+}
+.input-mailing::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1,25;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.6);
+}
+.button-primary.subscribe {
+    display: flex;
+    margin-top: 0;
+    margin-left: 12px;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+.subscribe-icon {
+    margin-left: 10px;
+    fill: currentColor;
 }
 /*Портфолио*/
 .section.project {
@@ -545,10 +767,7 @@ address {
 .project-box:nth-last-child(-n + 3) {
     margin-bottom: 0;
 }
-.project-box:hover .project-description {
-    opacity: 1;
-    transform: translateY(0);
-}
+
 .project-thumb {
     position: relative;
     overflow: hidden;
@@ -571,6 +790,10 @@ address {
     opacity: 0;
     transform: translateY(404px);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-box:hover .project-description {
+    opacity: 1;
+    transform: translateY(0);
 }
 .project-img {
     width: 370px;
@@ -599,58 +822,3 @@ address {
     margin-right: 0;
 }
 
-/* Модальное окно */
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-.backdrop.is-hidden .modal {
-    transform: translate(-50%, -80%) scale(0.39);
-}
-.modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 1;
-    min-width: 528px;
-    min-height: 581px;
-    background-color: #ffffff;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-                0px 1px 1px rgba(0, 0, 0, 0.14),
-                0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.button-close {
-    display: flex;
-    margin-left: auto;
-    margin-right: 8px;
-    margin-top: 8px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #000000;
-    background: #ffffff;
-    width: 30px;
-    height: 30px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.button-icon-close {
-    fill: currentColor;
-    width: 11px;
-    height: 11px;
-}
