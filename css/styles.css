@@ -317,12 +317,13 @@ body {
 }
 .field__policy {
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-bottom: 30px;
 }
 .field__link {
     color: var(--accent-color);
+    margin-left: 3px;
+
 }
 .field__label {
     font-weight: 400;
@@ -332,22 +333,17 @@ body {
     color: var(--secondary-text-color);
     margin-bottom: 4px;
 }
-.field__label--policy {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.71;
-    color: var(--secondary-text-color);
-    margin-left: 7px;
-}
 
 .field__input {
     padding: 11px 12px 11px 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+
 }
 .field__input:focus {
     border: 1px solid var(--accent-color);
     cursor: pointer;
+    outline: none;
 }
 .field__input:hover {
     cursor: pointer;
@@ -365,9 +361,6 @@ body {
     .field__input:focus+.field__icon {
         color: var(--accent-color);
 }
-input[type="checkbox"] {
-    display: none;
-}
 .field__textarea {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
@@ -377,6 +370,7 @@ input[type="checkbox"] {
     resize: none;
 }
 .field__textarea:focus {
+    outline: none;
     border: 1px solid var(--accent-color);
 }
 
@@ -391,6 +385,44 @@ input[type="checkbox"] {
 .textarea-field:not(:placeholder-shown) {
     border-color: #2196f3;
 } */
+.field__label--policy {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--secondary-text-color);
+}
+
+.checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+}
+.field__checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+    margin-right: 7px;
+}
+
+.checkbox:checked+.field__checkbox {
+    border-color: transparent;
+
+    background-image: url(../images/check-active.svg);
+    background-size: contain;
+    background-origin: border-box;
+}
 .field__button {
     display: block;
     margin-left: auto;
