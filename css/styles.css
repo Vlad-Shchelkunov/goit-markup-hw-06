@@ -489,6 +489,7 @@ body {
 }
 .about__item {
     position: relative;
+    z-index: -1;
 }
 
 .about__subject {
