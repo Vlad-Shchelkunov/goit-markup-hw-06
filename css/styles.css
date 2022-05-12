@@ -166,17 +166,14 @@ body {
 }
 
 /* Hero / Эффективные решения */
-.hero {
+.section-hero {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: #C4C4C4;
     border: 1px solid #000000;
-    text-align: center;
     max-width: 1600px;
     padding: 200px 0;
-    margin-left: auto;
-    margin-right: auto;
     background-image: linear-gradient(to right,
             rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)),
@@ -184,20 +181,20 @@ body {
 }
 
 .hero-title {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto 30px;
     color: #ffffff;
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
     letter-spacing: 0.06em;
+    text-align: center;
     text-transform: uppercase;
-    max-width: 700px;
+    max-width: 696px;
+}
+.button-primary {
+    display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-.button-primary {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
     font-weight: 700;
@@ -209,7 +206,6 @@ body {
     border-radius: 4px;
     border-color: transparent;
     padding: 10px;
-    margin-top: 30px;
     height: 50px;
     min-width: 200px;
     cursor: pointer;
@@ -246,6 +242,7 @@ body {
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -80%) scale(0.39);
 }
+
 .modal {
     position: absolute;
     top: 50%;
@@ -312,21 +309,7 @@ body {
     flex-direction: column;
     margin-bottom: 10px;
 }
-.field:nth-child(4) {
-    margin-bottom: 20px;
-}
-.field__policy {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-.field__link {
-    color: var(--accent-color);
-    margin-left: 3px;
-
-}
 .field__label {
-    font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
@@ -375,7 +358,6 @@ body {
 }
 
 .field__textarea::placeholder {
-        font-weight: 400;
         font-size: 12px;
         line-height: 1.17;
         letter-spacing: 0.01em;
@@ -385,16 +367,27 @@ body {
 .textarea-field:not(:placeholder-shown) {
     border-color: #2196f3;
 } */
-.field__label--policy {
+.privat-policy {
+    margin-bottom: 30px;
+}
+
+.privat-policy__link {
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--accent-color);
+
+
+}
+.privat-policy__label {
     display: flex;
     align-items: center;
-    font-weight: 400;
+    justify-content: center;
     font-size: 14px;
     line-height: 1.71;
     color: var(--secondary-text-color);
 }
 
-.checkbox {
+.privat-policy__checkbox {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -407,7 +400,7 @@ body {
     overflow: hidden;
 
 }
-.field__checkbox {
+.privat-policy__icon {
     display: inline-block;
     width: 16px;
     height: 15px;
@@ -416,11 +409,9 @@ body {
     margin-right: 7px;
 }
 
-.checkbox:checked+.field__checkbox {
+.privat-policy__checkbox:checked+.privat-policy__icon {
     border-color: transparent;
-
     background-image: url(../images/check-active.svg);
-    background-size: contain;
     background-origin: border-box;
 }
 .field__button {
@@ -485,7 +476,6 @@ body {
     margin-bottom: 0;
     width: 270px;
     font-size: 14px;
-    font-weight: 400;
     line-height: 1.71;
     color: var(--secondary-text-color);
 }
@@ -559,7 +549,6 @@ body {
     margin-top: 0;
     margin-bottom: 16px;
     font-size: 16px;
-    font-weight: 400;
     line-height: 1.17;
     color: var(--secondary-text-color);
 }
