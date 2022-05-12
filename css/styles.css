@@ -173,6 +173,7 @@ body {
     background-color: #C4C4C4;
     border: 1px solid #000000;
     max-width: 1600px;
+    margin: 0 auto;
     padding: 200px 0;
     background-image: linear-gradient(to right,
             rgba(47, 48, 58, 0.4),
