@@ -267,7 +267,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    padding: 10px 0;
     right: 8px;
     top: 8px;
     border-radius: 50%;
@@ -376,8 +376,6 @@ body {
     font-size: 14px;
     line-height: 1.71;
     color: var(--accent-color);
-
-
 }
 .privat-policy__label {
     display: flex;
@@ -458,7 +456,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
 }
 .work__icon {
     width: 70px;
